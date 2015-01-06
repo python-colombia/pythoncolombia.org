@@ -4,6 +4,7 @@ from django.conf.urls import *
 urlpatterns = patterns(
     'cms.views',
     url(r'^$', 'index', name='index'),
+    url(r'^article/(?P<slug>[\w-]+)/$', 'article', name='view_article'),
     url(r'^(?P<year>\d{4})/$', 'list', name="year_archive"),
     url(r'^(?P<year>\d{4})/(?P<month>\d{2})/$', 'list', name="month_archive"),
     url(r'^tag/(?P<tag>[\w-]+)/$', 'list', name='tag_archive'),
